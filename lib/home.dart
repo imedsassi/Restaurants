@@ -8,6 +8,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  List<String> items = ['cars', 'bus', 'airplane', 'motorbike'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,12 +16,33 @@ class _HomeState extends State<Home> {
         title: Text('Restaurants'),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.maybePop(context);
+            },
             icon: Icon(Icons.details),
           ),
           IconButton(
             onPressed: () {},
             icon: Icon(Icons.list),
+          ),
+        ],
+      ),
+      body: GridView.count(
+        crossAxisCount: 6,
+        children: [
+          GestureDetector(
+            onTap: () {
+              return;
+            },
+            child: Center(
+              child: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.rectangle,
+                  color: Colors.red,
+                ),
+                child: Text('items'),
+              ),
+            ),
           ),
         ],
       ),
