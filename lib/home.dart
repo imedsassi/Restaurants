@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Home extends StatefulWidget {
   Home({Key? key}) : super(key: key);
 
@@ -8,6 +10,20 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Restaurants'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.details),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.list),
+          ),
+        ],
+      ),
+    );
   }
 }
